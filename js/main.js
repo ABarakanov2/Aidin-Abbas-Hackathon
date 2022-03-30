@@ -1,26 +1,21 @@
 const API = "http://localhost:8000/posts";
 
-let inpName = $(".inp-name");
-let inpLastName = $(".inp-lastname");
-let inpEmail = $(".inp-email");
+let inpHeader = $(".inp-header");
+let inpDesc = $(".inp-desc");
 let inpImage = $(".inp-image");
-let inpUser = $(".inp-username");
+
 let addForm = $(".add-form");
 
 addForm.on("submit", async (event) => {
   event.preventDefault();
-  let name = inpName.val().trim();
-  let lastName = inpLastName.val().trim();
-  let email = inpEmail.val().trim();
+  let header = inpHeader.val().trim();
+  let desc = inpDesc.val().trim();
   let image = inpImage.val().trim();
-  let user = inpUser.val().trim();
 
   let newUser = {
-    name: name,
-    lastName: lastName,
-    email: email,
+    header: header,
+    desc: desc,
     image: image,
-    user: user,
   };
   for (let key in newUser) {
     if (!newUser[key]) {
@@ -35,9 +30,8 @@ addForm.on("submit", async (event) => {
     },
     body: JSON.stringify(newUser),
   });
-  inpName.val("");
-  inpLastName.val("");
-  inpEmail.val("");
+  inpHeader.val("");
+  inpDesc.val("");
   inpImage.val("");
-  inpUser.val("");
+  getPosts();
 });
