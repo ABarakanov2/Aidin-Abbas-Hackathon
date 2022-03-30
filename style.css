@@ -1,0 +1,16 @@
+.navbar {
+  height: 80px;
+  padding: 0;
+}
+
+.modal-wind {
+  max-width: 40%;
+}
+
+.add-form button {
+  width: 447px;
+}
+
+.form-control {
+  margin: 10px 0;
+}
