@@ -35,3 +35,39 @@ addForm.on("submit", async (event) => {
   inpImage.val("");
   getPosts();
 });
+
+//! read
+
+let postsList = $(".posts-list");
+
+async function getPosts() {
+  const response = await fetch(API);
+  const data = await response.json();
+
+  // let first = currentPage * postsPerPage - postsPerPage;
+  // let last = currentPage * postsPerPage;
+
+  const currentPosts = data.slice(); //(first, last);
+  // lastPage = Math.ceil(data.length / postsPerPage);
+
+  // if (currentPage === 1) {
+  //   prevBtn.addClass("disabled");
+  // } else {
+  //   prevBtn.removeClass("disabled");
+  // }
+
+  // if (currentPage === lastPage) {
+  //   nextBtn.addClass("disabled");
+  // } else {
+  //   nextBtn.removeClass("disabled");
+  // }
+
+  // postsList.html("");
+  // currentPosts.forEach((item) => {
+  //   postsList.append(`
+
+  //     `);
+  // });
+}
+
+getPosts();
